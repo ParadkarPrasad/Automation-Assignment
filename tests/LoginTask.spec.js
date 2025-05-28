@@ -7,8 +7,8 @@ describe('Login ', async () => {
     const emailInput1 = page.locator("#email1")
     await expect(emailInput1).toBeVisible()
     await expect(emailInput1).toBeEnabled()
-    await emailInput1.fill("jes123@gmail.com")
-    expect(await emailInput1.inputValue()).toBe('jes123@gmail.com')
+    await emailInput1.fill("mark123@gmail.com")
+    expect(await emailInput1.inputValue()).toBe('mark123@gmail.com')
 
     const passwordInput1 = page.locator("#password1")
     await expect(passwordInput1).toBeVisible()
