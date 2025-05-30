@@ -17,8 +17,8 @@ describe('New User Registration', () => {
     // Enabled state check: Make sure the field is enabled and can be typed into
     await expect(nameInput).toBeEnabled()
     // Type into the name field
-    await nameInput.fill("Mark")
-    expect(await nameInput.inputValue()).toBe('Mark')
+    await nameInput.fill("Theo")
+    expect(await nameInput.inputValue()).toBe('Theo')
 
     const emailInput = page.locator('#email')
     // Visibility check for the email field
@@ -26,8 +26,8 @@ describe('New User Registration', () => {
     // Enabled state check: Make sure the field is enabled and can be typed into
     await expect(emailInput).toBeEnabled()
     // Type into the email field
-    await emailInput.fill("mark123@gmail.com")
-    expect(await emailInput.inputValue()).toBe('mark123@gmail.com')
+    await emailInput.fill("theo@gmail.com")
+    expect(await emailInput.inputValue()).toBe('theo@gmail.com')
 
     const passwordInput = page.locator('#password')
     // Visibility check for the password field
@@ -64,7 +64,7 @@ describe('New User Registration', () => {
     await page.selectOption('#hobbies', ['Reading', 'Swimming'])
 
     // Sign up button
-    await page.click('//button[normalize-space()="Sign up"]')
+    await page.click('.submit-btn')
     await expect(page).toHaveURL('/login')
     await page.close()
   })

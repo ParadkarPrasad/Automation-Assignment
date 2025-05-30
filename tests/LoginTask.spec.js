@@ -7,8 +7,8 @@ describe('Login ', async () => {
     const emailInput1 = page.locator("#email1")
     await expect(emailInput1).toBeVisible()
     await expect(emailInput1).toBeEnabled()
-    await emailInput1.fill("mark123@gmail.com")
-    expect(await emailInput1.inputValue()).toBe('mark123@gmail.com')
+    await emailInput1.fill("theo@gmail.com")
+    expect(await emailInput1.inputValue()).toBe('theo@gmail.com')
 
     const passwordInput1 = page.locator("#password1")
     await expect(passwordInput1).toBeVisible()
@@ -41,16 +41,16 @@ describe('Login ', async () => {
     await page.click('button:has-text("Enroll Now")')
 
     // Fill the form
-    await page.locator('textarea#address').fill("Manchester")
-    await page.locator('input#phone').fill('0123456789')
+    await page.locator('textarea#address').fill("Mumbai")
+    await page.locator('input#phone').fill('4523412011')
     // Click on Enroll Button after filling the form
     await page.locator('button.action-btn').last().click()
 
     // capture the text
-    const EnrollId = await page.locator('h4.uniqueId').textContent();
+    const EnrollId = await page.locator('.uniqueId').textContent();
 
     // cancel button
     await page.locator('button.action-btn.white-action-btn', { hasText: 'Cancel' }).click()
-
+    await page.close()
   })
 })
